@@ -1,1 +1,39 @@
 Hola!
+
+Ejercicio 1: Basándote en el fichero original, añade un “)” inmediatamente después del primer número del resultado 
+debe ser el siguiente:
+
+(?<name>[0-9])(\s)
+$1) 
+
+
+Ejercicio 2: Basándote en el fichero original, haz que todos los elementos tengan un solo 
+espacio entre palabra y palabra. Por tanto, es necesario quitar tabulaciones y doble espaciados. 
+Además, también debes de seleccionar los espacios del final 
+independientemente de si son tabulaciones o espacios. 
+
+Explica aquí cómo lo has logrado, poniendo el reggex, una captura de pantalla, etc.
+Ejercicio apartado B (Ampliación): Una vez lo tengas resuelto intenta hacerlo en los menos pasos posibles.
+
+(\s+| \t)
+espacio
+
+Ejercicio 3: Basándote en el fichero original, sustituye todos los correos que tengan:
+
+@(([a-z]|[A-Z]|[0-9])+)(?=(\.cl|\.ch))
+@.*(?=(\.cl|\.ch)) -> Otra forma
+@gmail
+
+
+Ejercicio 4: Elimina todo lo que no sea un email:
+
+(.*?)([a-zA-Z0-9._.-]+@[a-zA-Z0-9]+.+\t)(.*)
+$2
+
+Ejercicio 5: la compañía nos comenta que necesitamos pasar el fichero a un formato CSV. 
+Ya que quieren poder abrir el fichero desde Excel por lo que tendremos que transformar el fichero a un formato CSV. 
+Para ello, nos han pedido que no tenga espacios y que los elementos estén separados 
+por puntos y comas de una forma similar a la siguiente:
+
+(\s+| \t)
+;
